@@ -18,27 +18,43 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
+            padding: 20px;
         }
 
         .container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 500px;
-            width: 100%;
+            padding: 40px;
+            max-width: 900px;
+            width: 65%;
+            min-width: 600px;
+            height: 85vh;
+            min-height: 700px;
             backdrop-filter: blur(10px);
+            overflow-y: auto;
         }
 
         /* Mobile responsiveness */
+        @media (max-width: 1024px) {
+            .container {
+                width: 80%;
+                height: 75vh;
+                min-width: 500px;
+                padding: 30px;
+            }
+        }
+
         @media (max-width: 768px) {
             body {
-                padding: 5px;
+                padding: 10px;
             }
             
             .container {
-                padding: 15px;
+                width: 95%;
+                height: 80vh;
+                min-width: 350px;
+                padding: 20px;
                 margin: 5px;
                 border-radius: 15px;
             }
@@ -46,7 +62,10 @@
 
         @media (max-width: 480px) {
             .container {
-                padding: 12px;
+                width: 98%;
+                height: 85vh;
+                min-width: 300px;
+                padding: 15px;
                 margin: 3px;
                 border-radius: 12px;
             }
@@ -54,30 +73,30 @@
 
         .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .header h1 {
             color: #333;
-            font-size: clamp(18px, 5vw, 24px);
-            margin-bottom: 10px;
+            font-size: clamp(24px, 3vw, 32px);
+            margin-bottom: 15px;
         }
 
         /* Mobile header adjustments */
         @media (max-width: 480px) {
             .header {
-                margin-bottom: 15px;
+                margin-bottom: 20px;
             }
             
             .header h1 {
-                font-size: 20px;
+                font-size: 24px;
             }
         }
 
         .status-indicator {
             display: inline-block;
-            width: 12px;
-            height: 12px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background: #4CAF50;
             margin-left: 10px;
@@ -93,65 +112,65 @@
         .display {
             background: #000;
             color: #00ff00;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
             font-family: 'Courier New', monospace;
-            font-size: clamp(14px, 4vw, 18px);
+            font-size: clamp(20px, 2.5vw, 28px);
             text-align: center;
-            min-height: 50px;
+            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #333;
+            border: 3px solid #333;
         }
 
         .input-display {
             background: #1a1a1a;
             color: #fff;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
             font-family: 'Courier New', monospace;
-            font-size: clamp(12px, 3vw, 14px);
+            font-size: clamp(16px, 2vw, 20px);
             text-align: center;
-            border: 1px solid #444;
+            border: 2px solid #444;
         }
 
         /* Mobile display adjustments */
         @media (max-width: 480px) {
             .display {
-                padding: 12px;
-                margin-bottom: 12px;
-                min-height: 45px;
-                font-size: 16px;
+                padding: 15px;
+                margin-bottom: 15px;
+                min-height: 60px;
+                font-size: 18px;
             }
             
             .input-display {
-                padding: 10px;
-                margin-bottom: 12px;
-                font-size: 12px;
+                padding: 12px;
+                margin-bottom: 15px;
+                font-size: 14px;
             }
         }
 
         .keypad {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
         .key {
             background: linear-gradient(145deg, #f0f0f0, #cacaca);
             border: none;
-            border-radius: 12px;
-            padding: 15px;
-            font-size: clamp(16px, 4vw, 20px);
+            border-radius: 15px;
+            padding: 20px;
+            font-size: clamp(20px, 2.5vw, 28px);
             font-weight: bold;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            min-height: 60px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -160,39 +179,39 @@
         /* Mobile keypad adjustments */
         @media (max-width: 768px) {
             .keypad {
-                gap: 6px;
+                gap: 10px;
+            }
+            
+            .key {
+                padding: 15px;
+                min-height: 65px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .keypad {
+                gap: 8px;
+                margin-bottom: 15px;
             }
             
             .key {
                 padding: 12px;
                 min-height: 55px;
                 font-size: 18px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .keypad {
-                gap: 5px;
-                margin-bottom: 12px;
-            }
-            
-            .key {
-                padding: 10px;
-                min-height: 50px;
-                font-size: 16px;
-                border-radius: 8px;
+                border-radius: 10px;
             }
         }
 
         .key:hover {
             background: linear-gradient(145deg, #e0e0e0, #b0b0b0);
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
         .key:active {
             transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .special-key {
@@ -207,40 +226,40 @@
         .leds {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 15px;
+            gap: 40px;
+            margin-bottom: 25px;
         }
 
         .led {
-            width: 28px;
-            height: 28px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            border: 3px solid #333;
+            border: 4px solid #333;
             transition: all 0.3s ease;
         }
 
         /* Mobile LED adjustments */
         @media (max-width: 480px) {
             .leds {
-                gap: 20px;
-                margin-bottom: 12px;
+                gap: 25px;
+                margin-bottom: 15px;
             }
             
             .led {
-                width: 25px;
-                height: 25px;
-                border: 2px solid #333;
+                width: 30px;
+                height: 30px;
+                border: 3px solid #333;
             }
         }
 
         .led.green {
             background: #4CAF50;
-            box-shadow: 0 0 20px #4CAF50;
+            box-shadow: 0 0 25px #4CAF50;
         }
 
         .led.red {
             background: #f44336;
-            box-shadow: 0 0 20px #f44336;
+            box-shadow: 0 0 25px #f44336;
         }
 
         .led.off {
@@ -250,20 +269,20 @@
 
         .servo-indicator {
             text-align: center;
-            margin-bottom: 15px;
-            padding: 12px;
+            margin-bottom: 25px;
+            padding: 20px;
             background: #f5f5f5;
-            border-radius: 8px;
-            border-left: 4px solid #2196F3;
-            font-size: clamp(14px, 3.5vw, 16px);
+            border-radius: 12px;
+            border-left: 6px solid #2196F3;
+            font-size: clamp(16px, 2vw, 22px);
         }
 
         /* Mobile servo indicator adjustments */
         @media (max-width: 480px) {
             .servo-indicator {
-                padding: 10px;
-                margin-bottom: 12px;
-                font-size: 14px;
+                padding: 15px;
+                margin-bottom: 15px;
+                font-size: 16px;
             }
         }
 
@@ -273,19 +292,26 @@
         }
 
         .log-section {
-            margin-top: 20px;
-            padding: 15px;
+            margin-top: 25px;
+            padding: 20px;
             background: #f9f9f9;
-            border-radius: 8px;
+            border-radius: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .log-section h3 {
+            font-size: clamp(16px, 2vw, 20px);
+            margin-bottom: 15px;
         }
 
         .log-entry {
-            padding: 8px;
-            margin: 5px 0;
+            padding: 12px;
+            margin: 8px 0;
             background: white;
-            border-radius: 4px;
-            border-left: 3px solid #2196F3;
-            font-size: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #2196F3;
+            font-size: clamp(16px, 1.5vw, 22px);
             font-family: 'Courier New', monospace;
         }
 
@@ -299,8 +325,8 @@
 
         .time-display {
             text-align: center;
-            margin-bottom: 15px;
-            font-size: clamp(12px, 3vw, 14px);
+            margin-bottom: 20px;
+            font-size: clamp(14px, 1.8vw, 18px);
             color: #666;
             font-family: 'Courier New', monospace;
         }
@@ -308,27 +334,29 @@
         /* Mobile time display adjustments */
         @media (max-width: 480px) {
             .time-display {
-                margin-bottom: 12px;
-                font-size: 12px;
+                margin-bottom: 15px;
+                font-size: 14px;
             }
         }
 
         .authorized-users {
-            margin-top: 20px;
-            padding: 15px;
+            margin-top: 25px;
+            padding: 20px;
             background: #e3f2fd;
-            border-radius: 8px;
-            border-left: 4px solid #2196F3;
+            border-radius: 12px;
+            border-left: 6px solid #2196F3;
         }
 
         .authorized-users h3 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #1976d2;
+            font-size: clamp(16px, 2vw, 20px);
         }
 
         .user-list {
             font-family: 'Courier New', monospace;
-            font-size: 12px;
+            font-size: clamp(12px, 1.5vw, 16px);
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -373,14 +401,6 @@
             <button class="key" onclick="handleKey('D')">D</button>
         </div>
 
-        <div class="authorized-users">
-            <h3>Authorized Users</h3>
-            <div class="user-list">
-                ID: 101, Pass: 1234<br>
-                ID: 102, Pass: 5678<br>
-                ID: 103, Pass: 9999
-            </div>
-        </div>
 
         <div class="log-section">
             <h3>Access Log</h3>
