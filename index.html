@@ -18,28 +18,60 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 10px;
         }
 
         .container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            padding: 20px;
             max-width: 500px;
             width: 100%;
             backdrop-filter: blur(10px);
         }
 
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                padding: 15px;
+                margin: 5px;
+                border-radius: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px;
+                margin: 3px;
+                border-radius: 12px;
+            }
+        }
+
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .header h1 {
             color: #333;
-            font-size: 24px;
+            font-size: clamp(18px, 5vw, 24px);
             margin-bottom: 10px;
+        }
+
+        /* Mobile header adjustments */
+        @media (max-width: 480px) {
+            .header {
+                margin-bottom: 15px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
         }
 
         .status-indicator {
@@ -61,13 +93,13 @@
         .display {
             background: #000;
             color: #00ff00;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-family: 'Courier New', monospace;
-            font-size: 18px;
+            font-size: clamp(14px, 4vw, 18px);
             text-align: center;
-            min-height: 60px;
+            min-height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -77,31 +109,79 @@
         .input-display {
             background: #1a1a1a;
             color: #fff;
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-family: 'Courier New', monospace;
+            font-size: clamp(12px, 3vw, 14px);
             text-align: center;
             border: 1px solid #444;
+        }
+
+        /* Mobile display adjustments */
+        @media (max-width: 480px) {
+            .display {
+                padding: 12px;
+                margin-bottom: 12px;
+                min-height: 45px;
+                font-size: 16px;
+            }
+            
+            .input-display {
+                padding: 10px;
+                margin-bottom: 12px;
+                font-size: 12px;
+            }
         }
 
         .keypad {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 15px;
         }
 
         .key {
             background: linear-gradient(145deg, #f0f0f0, #cacaca);
             border: none;
             border-radius: 12px;
-            padding: 20px;
-            font-size: 20px;
+            padding: 15px;
+            font-size: clamp(16px, 4vw, 20px);
             font-weight: bold;
             cursor: pointer;
             transition: all 0.2s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mobile keypad adjustments */
+        @media (max-width: 768px) {
+            .keypad {
+                gap: 6px;
+            }
+            
+            .key {
+                padding: 12px;
+                min-height: 55px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .keypad {
+                gap: 5px;
+                margin-bottom: 12px;
+            }
+            
+            .key {
+                padding: 10px;
+                min-height: 50px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
         }
 
         .key:hover {
@@ -127,16 +207,30 @@
         .leds {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
+            gap: 25px;
+            margin-bottom: 15px;
         }
 
         .led {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             border: 3px solid #333;
             transition: all 0.3s ease;
+        }
+
+        /* Mobile LED adjustments */
+        @media (max-width: 480px) {
+            .leds {
+                gap: 20px;
+                margin-bottom: 12px;
+            }
+            
+            .led {
+                width: 25px;
+                height: 25px;
+                border: 2px solid #333;
+            }
         }
 
         .led.green {
@@ -156,11 +250,21 @@
 
         .servo-indicator {
             text-align: center;
-            margin-bottom: 20px;
-            padding: 15px;
+            margin-bottom: 15px;
+            padding: 12px;
             background: #f5f5f5;
             border-radius: 8px;
             border-left: 4px solid #2196F3;
+            font-size: clamp(14px, 3.5vw, 16px);
+        }
+
+        /* Mobile servo indicator adjustments */
+        @media (max-width: 480px) {
+            .servo-indicator {
+                padding: 10px;
+                margin-bottom: 12px;
+                font-size: 14px;
+            }
         }
 
         .servo-indicator.unlocked {
@@ -181,7 +285,7 @@
             background: white;
             border-radius: 4px;
             border-left: 3px solid #2196F3;
-            font-size: 18px;
+            font-size: 12px;
             font-family: 'Courier New', monospace;
         }
 
@@ -195,10 +299,18 @@
 
         .time-display {
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 14px;
+            margin-bottom: 15px;
+            font-size: clamp(12px, 3vw, 14px);
             color: #666;
             font-family: 'Courier New', monospace;
+        }
+
+        /* Mobile time display adjustments */
+        @media (max-width: 480px) {
+            .time-display {
+                margin-bottom: 12px;
+                font-size: 12px;
+            }
         }
 
         .authorized-users {
@@ -261,14 +373,14 @@
             <button class="key" onclick="handleKey('D')">D</button>
         </div>
 
-            <!-- <div class="authorized-users">
-                <h3>Authorized Users</h3>
-                <div class="user-list">
-                    ID: 101, Pass: 1234<br>
-                    ID: 102, Pass: 5678<br>
-                    ID: 103, Pass: 9999
-                </div>
-            </div> -->
+        <div class="authorized-users">
+            <h3>Authorized Users</h3>
+            <div class="user-list">
+                ID: 101, Pass: 1234<br>
+                ID: 102, Pass: 5678<br>
+                ID: 103, Pass: 9999
+            </div>
+        </div>
 
         <div class="log-section">
             <h3>Access Log</h3>
